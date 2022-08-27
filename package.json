@@ -1,0 +1,21 @@
+{
+  "name": "2022-coding-challenge",
+  "version": "1.0.0",
+  "description": "## **Testing Environments**",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./api/index.js",
+    "dev": "node ./api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenAxon/2022-Coding-Challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenAxon/2022-Coding-Challenge/issues"
+  },
+  "homepage": "https://github.com/OpenAxon/2022-Coding-Challenge#readme"
+}

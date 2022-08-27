@@ -11,7 +11,7 @@ services:
       interval: 10s
       timeout: 2s
       retries: 3
-  
+
   nginx:
     image: nginx:latest
     container_name: "nginx"
@@ -37,3 +37,17 @@ services:
       - "dispatching_queue"
     links:
       - "dispatching_queue"
+
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: server
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    depends_on:
+      - event_publisher
+      - dispatching_queue
