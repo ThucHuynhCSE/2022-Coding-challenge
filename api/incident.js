@@ -1,6 +1,6 @@
-let incidents = []
-let officers = []
-const resolve = async(event)=>{
+exports.incidents = []
+exports.officers = []
+exports.resolve = async(event)=>{
     if (event.type=="IncidentOccurred"){
         const officerIndex = officeToEvent(incidents)
         //push iincidents
@@ -98,10 +98,4 @@ const officeToEvent = (incident)=>{
         incident[officerId].officerId = officers[officerId].id
     } 
     return officerId
-}
-
-export default {
-    incidents,
-    officers,
-    resolve
 }

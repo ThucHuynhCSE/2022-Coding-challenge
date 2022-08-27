@@ -1,6 +1,6 @@
 const amqplib = require('amqplib');
 const amqpUrl = `amqp://host.docker.internal:5672`;
-
+const {resolve, officers,incidents} = require('./incident')
 
 
 const MQSubChannel = async (option) => {
@@ -34,7 +34,7 @@ const main = async ()=>{
        'events', 
         async (msg) => {
             const decodeMsg = JSON.parse(msg.content.toString());
-            console.log(decodeMsg);
+            resolve(decodeMsg);
             SubChannel.ack(msg);
         },
         {
